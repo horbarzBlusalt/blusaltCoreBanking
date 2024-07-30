@@ -7,7 +7,7 @@ Given('users navigate to the app', () => {
     loginPage.elements.navigateToApp()
 })
 
-When('users enter a valid {string} and valid {string}', (email, password) => {
+When('users enter {string} and {string}', (email, password) => {
     loginPage.enterCredentials(email,password)
 })
 
@@ -17,4 +17,8 @@ When('users click login button', ()=> {
 
 Then('login is successful', () => {
     loginPage.verifyLoginSuccessful()
+})
+
+Then('login returns an error', () => {
+    loginPage.verifyLoginUnsuccessful()
 })
