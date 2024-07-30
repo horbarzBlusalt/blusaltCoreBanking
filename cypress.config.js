@@ -5,6 +5,8 @@ const addCucumberPreprocessorPlugin = require("@badeball/cypress-cucumber-prepro
 const createEsbuildPlugin = require("@badeball/cypress-cucumber-preprocessor/esbuild").createEsbuildPlugin;
 
 module.exports = defineConfig({
+  viewportWidth: 1280,
+  viewportHeight: 800,
   reporter: 'cypress-mochawesome-reporter',
   reporterOptions: {
     charts: true,

@@ -5,7 +5,7 @@ export class authenticationPage{
         navigateToApp: () => cy.visit('/'),
         emailInput: () => cy.get('#username'),
         passwordInput: () => cy.get('#password'),
-        loginBtn: () => cy.get('.sc-hLBbgP'),
+        loginBtn: () => cy.get('[data-testid="login-button"]'),
         dashboardElement: () => cy.get('.mt-1')
     }
 
@@ -19,6 +19,12 @@ export class authenticationPage{
     }
 
     verifyLoginSuccessful(){
+        cy.wait(2000)
         this.elements.dashboardElement().contains('Dashboard')
+    }
+
+    verifyLoginUnsuccessful(){
+        cy.wait(2000)
+        cy.contains('Unable to login with these credentials')
     }
 }
