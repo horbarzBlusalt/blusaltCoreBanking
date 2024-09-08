@@ -7,6 +7,7 @@ const createEsbuildPlugin = require("@badeball/cypress-cucumber-preprocessor/esb
 module.exports = defineConfig({
   viewportWidth: 1280,
   viewportHeight: 800,
+  video: true,
   reporter: 'cypress-mochawesome-reporter',
   reporterOptions: {
     charts: true,
@@ -38,7 +39,7 @@ module.exports = defineConfig({
 
       return config;
     },
-    specPattern:["cypress/e2e/features/*.feature",'cypress/e2e/**/*.cy.{js,jsx,ts,tsx}'],
+    specPattern:["cypress/e2e/features/*.feature","cypress/e2e/features/**/*.feature",'cypress/e2e/**/*.cy.{js,jsx,ts,tsx}'],
     chromeWebSecurity: false,
     baseUrl:"https://dev-baas.blusalt.io/"
   }
